@@ -249,7 +249,7 @@ function getHrefForDirectory(item) {
 
 function renderRow(item, cols) {
     var row = '';
-    row += '<a class="btn-large waves-effect waves-light blue" href="' + item.href + '">' + item.keyText + '</a>';
+    row += '<a class="btn-large waves-effect waves-light teal" href="' + item.href + '">' + item.keyText + '</a>';
     return row;
 }
 
