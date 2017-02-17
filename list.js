@@ -83,14 +83,15 @@ function getS3Data(marker, html) {
             }
 
             buildNavigation(info);
-
+            console.log(1,html);
             html = typeof html !== 'undefined' ? html + prepareTable(info) :
                 prepareTable(info);
+            console.log(2,html);
             if (info.nextMarker != "null") {
                 getS3Data(info.nextMarker, html);
             } else {
-                document.getElementById('listing').innerHTML =
-                    '<pre>' + html + '</pre>';
+
+                document.getElementById('listing').innerHTML = html;
             }
         })
         .fail(function(error) {
@@ -109,7 +110,7 @@ function buildNavigation(info) {
             processedPathSegments =
                 processedPathSegments + encodeURIComponent(pathSegment) + '/';
             console.log(processedPathSegments);
-            return '<a href="?prefix=' + processedPathSegments + '">' + pathSegment +
+            return 'ok<a class="breadcrumb" href="?prefix=' + processedPathSegments + '">' + pathSegment +
                 '</a>';
         });
         $('#navigation').html(root + content.join(' / '));
@@ -210,7 +211,7 @@ function prepareTable(info) {
         prefix = info.prefix;
     var cols = [45, 30, 15];
     var content = [];
-    content.push(new Array(cols[0] + cols[1] + cols[2] + 4).join('-') + '\n');
+    // content.push(new Array(cols[0] + cols[1] + cols[2] + 4).join('-') + '\n');
 
     // add ../ at the start of the dir listing, unless we are already at root dir
     if (prefix && prefix !== S3B_ROOT_DIR) {
@@ -264,7 +265,7 @@ function getHrefForDirectory(item) {
 
 function renderRow(item, cols) {
     var row = '';
-    row += '<a href="' + item.href + '">' + item.keyText + '</a>';
+    row += '<a class="btn-large waves-effect waves-light blue" href="' + item.href + '">' + item.keyText + '</a>';
     return row;
 }
 

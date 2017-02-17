@@ -3,25 +3,46 @@
 
 <head>
     <title>S3 Bucket Listing Generator</title>
-    <link href="//cdn.muicss.com/mui-0.9.9/css/mui.min.css" rel="stylesheet" type="text/css" />
-    <script src="//cdn.muicss.com/mui-0.9.9/js/mui.min.js"></script>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
+    <!--Import Google Icon Font-->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
 
 <body>
-    <div class="mui-container">
+<nav class="light-blue lighten-1" role="navigation">
+    <div class="nav-wrapper container">
         <div id="navigation"></div>
-        <div id="listing"></div>
     </div>
+</nav>
+<div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+        <br><br>
 
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script type="text/javascript">
-        var S3BL_IGNORE_PATH = true;
-        //var BUCKET_NAME = 'build-test-report';
-        var BUCKET_URL = 'https://build-test-report.s3-eu-west-1.amazonaws.com';
-        var S3B_ROOT_DIR = '';
-        var S3B_SORT = 'DEFAULT';
-    </script>
-    <script type="text/javascript" src="list.js"></script>
+        <h1 class="header center light-blue-text  darken-3">Build Reports</h1>
+        <div class="row center">
+            <div id="listing"></div>
+        </div>
+        <br><br>
+
+    </div>
+</div>
+
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript">
+    var S3BL_IGNORE_PATH = true;
+    //var BUCKET_NAME = 'build-test-report';
+    var BUCKET_URL = 'https://build-test-report.s3-eu-west-1.amazonaws.com';
+    var S3B_ROOT_DIR = '';
+    var S3B_SORT = 'DEFAULT';
+</script>
+<script type="text/javascript" src="list.js"></script>
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
 </body>
 
 </html>
