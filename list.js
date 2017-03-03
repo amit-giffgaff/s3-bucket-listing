@@ -61,7 +61,7 @@ function getS3Data(marker, html) {
             var info = getInfoFromS3Data(xml);
 
             var ignoreFiles = ["error.html", "index.html", "list.js"];
-            var ignoreDirectories = ["buildreports"];
+            var ignoreDirectories = ["buildreports", "logs"];
 
             info.files = jQuery.grep(info.files, function(file) {
                 return $.inArray(file.Key, ignoreFiles) === -1;
